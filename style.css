@@ -24,6 +24,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+    z-index: 2; /* Поднимаем основной контент над hero-features */
         }
 
         section {
@@ -179,10 +181,12 @@
             align-items: center;
             color: white;
             position: relative;
+            padding-bottom: 200px;
         }
 
         .hero-content {
             max-width: 600px;
+             padding-top: 80px;
         }
 
         .hero h1 {
@@ -209,6 +213,7 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
             padding: 30px 0;
+            transform: none;
         }
 
         .features-grid {
@@ -387,69 +392,6 @@
             color: var(--secondary);
         }
 
-        /* Benefits
-        .benefits {
-            background: linear-gradient(135deg, var(--primary) 0%, #3a5a8a 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
-            opacity: 0.05;
-        }
-
-        .section-title.white h2 {
-            color: white;
-        }
-
-        .section-title.white h2::after {
-            background: var(--secondary);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            position: relative;
-        }
-
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 40px 30px;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .benefit-card p {
-            opacity: 0.9;
-        } */
-        /* /* Benefits Section */
 .benefits {
     background: linear-gradient(135deg, var(--primary) 0%, #3a5a8a 100%);
     color: white;
@@ -886,6 +828,8 @@
                 display: block;
             }
 
+            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -902,6 +846,37 @@
             .testimonial-item {
                 padding: 30px 20px;
             }
+                .hero {
+        min-height: auto;
+        padding-bottom: 250px; /* Больше места для мобильных */
+    }
+    
+    .hero-content {
+        padding-top: 40px;
+    }
+    
+    .hero-features {
+        position: relative; /* Меняем на относительное позиционирование */
+        margin-top: 40px;
+        padding: 20px 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .feature-item {
+        flex-direction: row;
+        text-align: left;
+        padding: 15px;
+    }
+    
+    .feature-icon {
+        margin-right: 15px;
+        margin-bottom: 0;
+        min-width: 50px;
+    }
         }
 
         @media (max-width: 576px) {

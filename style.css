@@ -32,7 +32,7 @@
         }
 
         section {
-            padding: 60px 0;
+            padding:60px 0;
         }
 
         /* Header */
@@ -587,10 +587,11 @@
 
         /* CTA Section */
         .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/skf.png') no-repeat center/cover;
             color: white;
             text-align: center;
             padding: 80px 0;
+            /* https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80 */
         }
 
         .cta h2 {

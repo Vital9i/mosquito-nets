@@ -33,7 +33,7 @@
 
         section {
             padding:60px 0;
-        }
+                   }
 
         /* Header */
         header {
@@ -800,6 +800,9 @@
         }
 
         @media (max-width: 992px) {
+              section {
+                padding:150px 0;
+            }
 
             .features-grid,
             .benefits-grid {

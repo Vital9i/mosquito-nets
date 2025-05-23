@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <style>
+    <style>
         :root {
             --primary: #4a6fa5;
             --secondary: #ff7e5f;
@@ -16,35 +16,36 @@
             --light: #f8f9fa;
             --gray: #6c757d;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        html, body {
+
+        html,
+        body {
             overflow-x: hidden;
             width: 100%;
         }
-        
+
         body {
             color: var(--dark);
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
             width: 100%;
         }
-        
+
         section {
             padding: 60px 0;
         }
-        
+
         /* Header */
         header {
             position: fixed;
@@ -53,16 +54,16 @@
             width: 100%;
             z-index: 1000;
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -71,22 +72,22 @@
             align-items: center;
             text-decoration: none;
         }
-        
+
         .logo i {
             color: var(--secondary);
             margin-right: 10px;
             font-size: 1.8rem;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 25px;
         }
-        
+
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
@@ -95,7 +96,7 @@
             position: relative;
             font-size: 0.95rem;
         }
-        
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -106,11 +107,11 @@
             background: var(--secondary);
             transition: width 0.3s;
         }
-        
+
         .nav-links a:hover::after {
             width: 100%;
         }
-        
+
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
@@ -119,7 +120,7 @@
             background: none;
             border: none;
         }
-        
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -129,36 +130,46 @@
             flex-direction: column;
             color: white;
             padding-top: 80px;
-            padding-bottom: 200px;
+            /* padding-bottom: 200px; */
         }
-        
+
+        /* Главный контейнер - растягиваем на всю высоту */
+        .hero>.container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            /* Добавляем относительное позиционирование для контейнера */
+            position: relative;
+        }
+
         .hero-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 40px 0;
+            /* margin: auto 0; */
         }
-        
-        .hero h1 {
+
+        .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             line-height: 1.3;
         }
-        
+
         .hero p {
             font-size: 1.1rem;
             margin-bottom: 30px;
             opacity: 0.9;
             max-width: 600px;
         }
-        
+
         .hero-btns {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 25px;
@@ -172,47 +183,50 @@
             font-size: 0.9rem;
             text-align: center;
         }
-        
+
         .btn-primary {
             background: var(--primary);
             color: white;
             border: 2px solid var(--primary);
         }
-        
+
         .btn-primary:hover {
             background: transparent;
             color: white;
             border-color: white;
         }
-        
+
         .btn-secondary {
             background: var(--secondary);
             color: white;
             border: 2px solid var(--secondary);
         }
-        
+
         .btn-secondary:hover {
             background: transparent;
             color: var(--secondary);
         }
-        
+
         .hero-features {
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
             padding: 25px 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-        
+
         .feature-item {
             display: flex;
             align-items: center;
         }
-        
+
         .feature-icon {
             width: 50px;
             height: 50px;
@@ -226,29 +240,29 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
-        
+
         .feature-text h3 {
             font-size: 1rem;
             margin-bottom: 5px;
             color: var(--dark);
         }
-        
+
         .feature-text p {
             font-size: 0.85rem;
             color: var(--gray);
         }
-        
+
         /* About Section */
         .about {
             background: var(--light);
             padding: 80px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-title h2 {
             font-size: 2.2rem;
             font-weight: 700;
@@ -257,7 +271,7 @@
             display: inline-block;
             padding-bottom: 15px;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -268,124 +282,124 @@
             height: 3px;
             background: var(--secondary);
         }
-        
+
         .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
         }
-        
+
         .about-content h2 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
-        
+
         .about-content p {
             margin-bottom: 20px;
             color: var(--gray);
             line-height: 1.7;
         }
-        
+
         .about-list {
             margin: 25px 0;
         }
-        
+
         .about-list li {
             margin-bottom: 12px;
             list-style: none;
             display: flex;
             align-items: flex-start;
         }
-        
+
         .about-list i {
             color: var(--secondary);
             margin-right: 10px;
             font-size: 1.1rem;
             margin-top: 3px;
         }
-        
+
         .about-img {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.5s;
         }
-        
+
         .about-img:hover img {
             transform: scale(1.03);
         }
-        
+
         /* Products Section */
         .products {
             padding: 80px 0;
         }
-        
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
-        
+
         .product-card {
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
         }
-        
+
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .product-img {
-            height: 220px;
+            height: 300px;
             overflow: hidden;
         }
-        
+
         .product-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        
+
         .product-card:hover .product-img img {
             transform: scale(1.1);
         }
-        
+
         .product-content {
             padding: 20px;
         }
-        
+
         .product-content h3 {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--dark);
         }
-        
+
         .product-content p {
             color: var(--gray);
             margin-bottom: 15px;
             font-size: 0.95rem;
         }
-        
+
         .product-price {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
         }
-        
+
         .product-meta {
             display: flex;
             justify-content: space-between;
@@ -394,19 +408,19 @@
             border-top: 1px solid #eee;
             font-size: 0.85rem;
         }
-        
+
         .product-meta span {
             display: flex;
             align-items: center;
             color: var(--gray);
         }
-        
+
         .product-meta i {
             margin-right: 5px;
             color: var(--secondary);
             font-size: 0.9rem;
         }
-        
+
         /* Benefits Section */
         .benefits {
             background: linear-gradient(135deg, var(--primary) 0%, #3a5a8a 100%);
@@ -415,7 +429,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .benefits::before {
             content: '';
             position: absolute;
@@ -426,97 +440,97 @@
             background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
             opacity: 0.05;
         }
-        
+
         .section-title.white h2 {
             color: white;
         }
-        
+
         .section-title.white h2::after {
             background: white;
         }
-        
+
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
-        
+
         .benefit-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 30px;
             transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
         }
-        
+
         .benefit-card:hover {
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
         }
-        
+
         .benefit-icon {
             font-size: 2rem;
             color: var(--secondary);
             margin-bottom: 15px;
         }
-        
+
         .benefit-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
         }
-        
+
         .benefit-card p {
             opacity: 0.9;
             font-size: 0.95rem;
         }
-        
+
         .benefit-number {
             position: absolute;
             top: 15px;
             right: 15px;
             font-size: 2rem;
             font-weight: 700;
-            color: rgba(255,255,255,0.05);
+            color: rgba(255, 255, 255, 0.05);
         }
-        
+
         .benefits-cta {
             text-align: center;
             margin-top: 50px;
             padding: 25px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .benefits-cta p {
             font-size: 1.1rem;
             margin-bottom: 20px;
         }
-        
+
         /* Testimonials Section */
         .testimonials {
             background: var(--light);
             padding: 80px 0;
         }
-        
+
         .testimonials-slider {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .testimonial-item {
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
             margin: 0 15px;
         }
-        
+
         .testimonial-avatar {
             width: 80px;
             height: 80px;
@@ -525,13 +539,13 @@
             margin: 0 auto 15px;
             border: 3px solid rgba(74, 111, 165, 0.2);
         }
-        
+
         .testimonial-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .testimonial-text {
             font-size: 1rem;
             font-style: italic;
@@ -540,7 +554,7 @@
             position: relative;
             line-height: 1.7;
         }
-        
+
         .testimonial-text::before,
         .testimonial-text::after {
             content: '"';
@@ -548,28 +562,28 @@
             color: rgba(74, 111, 165, 0.2);
             position: absolute;
         }
-        
+
         .testimonial-text::before {
             top: -15px;
             left: -5px;
         }
-        
+
         .testimonial-text::after {
             bottom: -30px;
             right: -5px;
         }
-        
+
         .testimonial-author {
             font-weight: 700;
             color: var(--dark);
             margin-bottom: 5px;
         }
-        
+
         .testimonial-position {
             color: var(--gray);
             font-size: 0.85rem;
         }
-        
+
         /* CTA Section */
         .cta {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
@@ -577,47 +591,47 @@
             text-align: center;
             padding: 80px 0;
         }
-        
+
         .cta h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
         }
-        
+
         .cta p {
             max-width: 600px;
             margin: 0 auto 25px;
             font-size: 1.1rem;
             opacity: 0.9;
         }
-        
+
         /* Contact Section */
         .contact {
             padding: 80px 0;
             background: white;
         }
-        
+
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
-        
+
         .contact-info h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
-        
+
         .contact-details {
             margin-bottom: 30px;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-        
+
         .contact-icon {
             width: 45px;
             height: 45px;
@@ -631,31 +645,31 @@
             font-size: 1.1rem;
             flex-shrink: 0;
         }
-        
+
         .contact-text h4 {
             font-size: 1.1rem;
             margin-bottom: 5px;
             color: var(--dark);
         }
-        
-        .contact-text p, 
+
+        .contact-text p,
         .contact-text a {
             color: var(--gray);
             text-decoration: none;
             transition: color 0.3s;
             font-size: 0.95rem;
         }
-        
+
         .contact-text a:hover {
             color: var(--primary);
         }
-        
+
         .contact-social {
             display: flex;
             gap: 12px;
             margin-top: 20px;
         }
-        
+
         .social-icon {
             width: 38px;
             height: 38px;
@@ -668,23 +682,23 @@
             transition: all 0.3s;
             font-size: 1rem;
         }
-        
+
         .social-icon:hover {
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
         }
-        
+
         .contact-form {
             background: var(--light);
             padding: 30px;
             border-radius: 10px;
         }
-        
+
         .form-group {
             margin-bottom: 15px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
@@ -692,7 +706,7 @@
             color: var(--dark);
             font-size: 0.95rem;
         }
-        
+
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -701,38 +715,38 @@
             font-size: 0.95rem;
             transition: border-color 0.3s;
         }
-        
+
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
         }
-        
+
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
         }
-        
+
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
             padding: 60px 0 20px;
         }
-        
+
         .footer-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin-bottom: 40px;
         }
-        
+
         .footer-col h3 {
             font-size: 1.2rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .footer-col h3::after {
             content: '';
             position: absolute;
@@ -742,18 +756,18 @@
             height: 2px;
             background: var(--secondary);
         }
-        
+
         .footer-col p {
             opacity: 0.8;
             margin-bottom: 20px;
             font-size: 0.95rem;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
             list-style: none;
         }
-        
+
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
@@ -761,11 +775,11 @@
             display: block;
             font-size: 0.9rem;
         }
-        
+
         .footer-links a:hover {
             color: var(--secondary);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
@@ -773,132 +787,134 @@
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 20px;
             }
         }
-        
+
         @media (max-width: 992px) {
+
             .features-grid,
             .benefits-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .about-container,
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-img {
                 order: -1;
             }
-            
+
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
             }
         }
-        
+
         @media (max-width: 768px) {
             section {
                 padding: 50px 0;
             }
-            
+
             .hero {
                 min-height: auto;
                 padding: 100px 0 0;
             }
-            
+
             .hero-content {
                 padding: 40px 0 30px;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .hero-btns {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .btn {
                 width: 100%;
             }
-            
+
             .hero-features {
                 position: static;
                 margin-top: 30px;
-                padding: 25px 0;
+                
+                /* padding: 25px 0; */
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            
+
             .feature-item {
                 padding: 15px;
-                background: rgba(255,255,255,0.8);
+                background: rgba(255, 255, 255, 0.8);
                 border-radius: 8px;
             }
-            
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
+
             .about-content h2 {
                 font-size: 1.6rem;
             }
-            
+
             .products-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .benefits-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .benefit-card {
                 padding: 25px;
             }
-            
+
             .testimonial-item {
                 padding: 25px 20px;
             }
-            
+
             .cta h2 {
                 font-size: 1.8rem;
             }
-            
+
             .cta p {
                 font-size: 1rem;
             }
-            
+
             .contact-container {
                 gap: 30px;
             }
-            
+
             .contact-form {
                 padding: 25px;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 70px;
@@ -910,60 +926,61 @@
                 align-items: center;
                 padding: 30px 0;
                 transition: left 0.3s;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
+
             .nav-links.active {
                 left: 0;
             }
-            
+
             .nav-links li {
                 margin: 15px 0;
             }
-            
+
             .nav-links a {
                 font-size: 1.1rem;
             }
         }
-        
+
         @media (max-width: 576px) {
+
             .section-title h2 {
                 font-size: 1.6rem;
                 padding-bottom: 10px;
             }
-            
+
             .section-title h2::after {
                 width: 60px;
                 height: 2px;
             }
-            
+
             .footer-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .footer-col {
                 margin-bottom: 20px;
             }
-            
+
             .cta {
                 padding: 60px 0;
             }
-            
+
             .cta h2 {
                 font-size: 1.6rem;
             }
-            
+
             .benefits-cta {
                 padding: 20px;
             }
-            
+
             .benefits-cta p {
                 font-size: 1rem;
             }
         }
     </style>
-  </head>
+</head>
 
 <body>
     <!-- Header -->
@@ -1085,8 +1102,7 @@
                 </div>
 
                 <div class="about-img">
-                    <img src='img/about us.png'
-                        alt="О компании">
+                    <img src='img/about us.png' alt="О компании">
                 </div>
             </div>
         </div>
@@ -1102,8 +1118,7 @@
             <div class="products-grid">
                 <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="product-img">
-                        <img src="/img/standart.png"
-                            alt="Стандартная сетка">
+                        <img src="/img/standart.png" alt="Стандартная сетка">
                     </div>
                     <div class="product-content">
                         <h3>Стандартная сетка</h3>
@@ -1119,8 +1134,7 @@
 
                 <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600566752227-09a0c0c6b9c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                            alt="Сетка " Антикошка"">
+                        <img src="/img/antikoshka.png" alt="Сетка " Антикошка"">
                     </div>
                     <div class="product-content">
                         <h3>Сетка "Антикошка"</h3>
@@ -1136,8 +1150,7 @@
 
                 <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                            alt="Рулонная сетка">
+                        <img src="/img/rylon.png" alt="Рулонная сетка">
                     </div>
                     <div class="product-content">
                         <h3>Рулонная сетка</h3>
@@ -1153,8 +1166,7 @@
 
                 <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                            alt="Дверная сетка">
+                        <img src="/img/door.png" alt="Дверная сетка">
                     </div>
                     <div class="product-content">
                         <h3>Дверная сетка</h3>
@@ -1170,8 +1182,7 @@
 
                 <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.5s">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600566752227-09a0c0c6b9c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                            alt="Сетка " Антипыль"">
+                        <img src="/img/antiPil.png" alt="Сетка Антипыль">
                     </div>
                     <div class="product-content">
                         <h3>Сетка "Антипыль"</h3>
@@ -1187,12 +1198,11 @@
 
                 <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.6s">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                            alt="Сетка для панорамных окон">
+                        <img src="img/rasdvisnaya.png" alt="Сетка для раздвижных окон">
                     </div>
                     <div class="product-content">
-                        <h3>Сетка для панорамных окон</h3>
-                        <p>Усиленная конструкция для больших оконных проемов с повышенной ветровой нагрузкой.</p>
+                        <h3>Сетка для раздвижных окон</h3>
+                        <p>Специальная конструкция для раздвижных систем.</p>
                         <div class="product-price">от 6 500 ₽</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
@@ -1214,254 +1224,251 @@
 
             <div class="benefits-grid">
                 <div></div> -->
-                <!-- Benefits -->
-<section class="benefits" id="benefits">
-    <div class="container">
-        <div class="section-title white">
-            <h2>Почему выбирают наши сетки</h2>
-            <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
+    <!-- Benefits -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-title white">
+                <h2>Почему выбирают наши сетки</h2>
+                <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантия 3 года</h3>
+                    <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
+                    <div class="benefit-number">01</div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Точные замеры</h3>
+                    <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
+                    <div class="benefit-number">02</div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Быстрое производство</h3>
+                    <p>Изготовление за 1 день благодаря собственному производству в Минске</p>
+                    <div class="benefit-number">03</div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3>Защита от животных</h3>
+                    <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
+                    <div class="benefit-number">04</div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Антипыль и антипух</h3>
+                    <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
+                    <div class="benefit-number">05</div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Цвет на выбор</h3>
+                    <p>12 вариантов расцветок рамок под любой дизайн окон и интерьера</p>
+                    <div class="benefit-number">06</div>
+                </div>
+            </div>
+
+            <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
+                <a href="#contact" class="btn btn-secondary">Консультация</a>
+            </div>
         </div>
+    </section>
 
-        <div class="benefits-grid">
-            <!-- Benefit 1 -->
-            <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                <div class="benefit-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3>Гарантия 3 года</h3>
-                <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
-                <div class="benefit-number">01</div>
+    <!-- Продолжение предыдущего кода (вставляется после секции Benefits) -->
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы наших клиентов</h2>
             </div>
 
-            <!-- Benefit 2 -->
-            <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                <div class="benefit-icon">
-                    <i class="fas fa-ruler-combined"></i>
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Марина Иванова">
+                    </div>
+                    <div class="testimonial-text">
+                        Заказывала сетки "Антипыль" для всей квартиры. Очень довольна результатом -
+                        теперь можно спокойно проветривать, не боясь, что залетит тополиный пух. Мастер
+                        приехал точно в назначенное время, сделал все аккуратно.
+                    </div>
+                    <div class="testimonial-author">Марина Иванова</div>
+                    <div class="testimonial-position">г. Минск</div>
                 </div>
-                <h3>Точные замеры</h3>
-                <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
-                <div class="benefit-number">02</div>
-            </div>
 
-            <!-- Benefit 3 -->
-            <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                <div class="benefit-icon">
-                    <i class="fas fa-bolt"></i>
+                <div class="testimonial-item">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей Петров">
+                    </div>
+                    <div class="testimonial-text">
+                        Установили сетку "Антикошка" после того, как наш кот порвал обычную. Прошло уже
+                        полгода - сетка как новая, хотя кот регулярно пытается на нее залезть. Качество
+                        действительно на высоте, рекомендую!
+                    </div>
+                    <div class="testimonial-author">Алексей Петров</div>
+                    <div class="testimonial-position">г. Минск</div>
                 </div>
-                <h3>Быстрое производство</h3>
-                <p>Изготовление за 1 день благодаря собственному производству в Москве</p>
-                <div class="benefit-number">03</div>
-            </div>
 
-            <!-- Benefit 4 -->
-            <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                <div class="benefit-icon">
-                    <i class="fas fa-cat"></i>
+                <div class="testimonial-item">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Елена Смирнова">
+                    </div>
+                    <div class="testimonial-text">
+                        Заказывала рулонные сетки на дачу - очень удобно, когда приезжаем только на
+                        выходные. Установили быстро, объяснили как пользоваться. На зиму сетки убирать
+                        не нужно, что очень удобно. Спасибо за качественную работу!
+                    </div>
+                    <div class="testimonial-author">Елена Смирнова</div>
+                    <div class="testimonial-position">г.Минск</div>
                 </div>
-                <h3>Защита от животных</h3>
-                <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
-                <div class="benefit-number">04</div>
-            </div>
-
-            <!-- Benefit 5 -->
-            <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.5s">
-                <div class="benefit-icon">
-                    <i class="fas fa-wind"></i>
-                </div>
-                <h3>Антипыль и антипух</h3>
-                <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
-                <div class="benefit-number">05</div>
-            </div>
-
-            <!-- Benefit 6 -->
-            <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.6s">
-                <div class="benefit-icon">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3>Цвет на выбор</h3>
-                <p>12 вариантов расцветок рамок под любой дизайн окон и интерьера</p>
-                <div class="benefit-number">06</div>
             </div>
         </div>
+    </section>
 
-        <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
-            <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
-            <a href="#contact" class="btn btn-secondary">Консультация</a>
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Готовы заказать москитные сетки?</h2>
+            <p class="animate__animated animate__fadeInDown animate__delay-1s">Оставьте заявку прямо
+                сейчас и получите бесплатный замер и 5% скидку на первый заказ!</p>
+            <a href="#contact" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-2s">Оставить
+                заявку</a>
         </div>
-    </div>
-</section>
-                
-                <!-- Продолжение предыдущего кода (вставляется после секции Benefits) -->
+    </section>
 
-                    <!-- Testimonials -->
-                    <section class="testimonials">
-                        <div class="container">
-                            <div class="section-title">
-                                <h2>Отзывы наших клиентов</h2>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши контакты</h2>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-
-                            <div class="testimonials-slider">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-avatar">
-                                        <img src="https://randomuser.me/api/portraits/women/43.jpg"
-                                            alt="Марина Иванова">
-                                    </div>
-                                    <div class="testimonial-text">
-                                        Заказывала сетки "Антипыль" для всей квартиры. Очень довольна результатом -
-                                        теперь можно спокойно проветривать, не боясь, что залетит тополиный пух. Мастер
-                                        приехал точно в назначенное время, сделал все аккуратно.
-                                    </div>
-                                    <div class="testimonial-author">Марина Иванова</div>
-                                    <div class="testimonial-position">г. Минск</div>
-                                </div>
-
-                                <div class="testimonial-item">
-                                    <div class="testimonial-avatar">
-                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей Петров">
-                                    </div>
-                                    <div class="testimonial-text">
-                                        Установили сетку "Антикошка" после того, как наш кот порвал обычную. Прошло уже
-                                        полгода - сетка как новая, хотя кот регулярно пытается на нее залезть. Качество
-                                        действительно на высоте, рекомендую!
-                                    </div>
-                                    <div class="testimonial-author">Алексей Петров</div>
-                                    <div class="testimonial-position">г. Минск</div>
-                                </div>
-
-                                <div class="testimonial-item">
-                                    <div class="testimonial-avatar">
-                                        <img src="https://randomuser.me/api/portraits/women/65.jpg"
-                                            alt="Елена Смирнова">
-                                    </div>
-                                    <div class="testimonial-text">
-                                        Заказывала рулонные сетки на дачу - очень удобно, когда приезжаем только на
-                                        выходные. Установили быстро, объяснили как пользоваться. На зиму сетки убирать
-                                        не нужно, что очень удобно. Спасибо за качественную работу!
-                                    </div>
-                                    <div class="testimonial-author">Елена Смирнова</div>
-                                    <div class="testimonial-position">г.Минск</div>
-                                </div>
+                            <div class="contact-text">
+                                <h4>Адрес</h4>
+                                <p>г. Минск, ул. Производственная, 15</p>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- CTA -->
-                    <section class="cta">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">Готовы заказать москитные сетки?</h2>
-                            <p class="animate__animated animate__fadeInDown animate__delay-1s">Оставьте заявку прямо
-                                сейчас и получите бесплатный замер и 5% скидку на первый заказ!</p>
-                            <a href="#contact"
-                                class="btn btn-primary animate__animated animate__fadeInUp animate__delay-2s">Оставить
-                                заявку</a>
-                        </div>
-                    </section>
-
-                    <!-- Contact -->
-                    <section class="contact" id="contact">
-                        <div class="container">
-                            <div class="section-title">
-                                <h2>Наши контакты</h2>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
                             </div>
-
-                            <div class="contact-container">
-                                <div class="contact-info">
-                                    <h3>Свяжитесь с нами</h3>
-
-                                    <div class="contact-details">
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-map-marker-alt"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Адрес</h4>
-                                                <p>г. Минск, ул. Производственная, 15</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-phone-alt"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Телефон</h4>
-                                                <a href="tel:+74951234567">+3 (7529) 123-45-67</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Email</h4>
-                                                <a href="mailto:info@moskit-setka.ru">info@moskit-setka.ru</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-clock"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Режим работы</h4>
-                                                <p>Пн-Пт: 9:00 - 20:00<br>Сб-Вс: 10:00 - 18:00</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <h3 style="margin-top: 40px;">Мы в соцсетях</h3>
-                                    <div class="contact-social">
-                                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-form">
-                                    <h3>Оставьте заявку</h3>
-                                    <form id="orderForm">
-                                        <div class="form-group">
-                                            <label for="name">Ваше имя</label>
-                                            <input type="text" id="name" class="form-control" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="phone">Телефон</label>
-                                            <input type="tel" id="phone" class="form-control" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" id="email" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="product">Тип сетки</label>
-                                            <select id="product" class="form-control">
-                                                <option value="standard">Стандартная сетка</option>
-                                                <option value="antikoshka">Сетка "Антикошка"</option>
-                                                <option value="roll">Рулонная сетка</option>
-                                                <option value="door">Дверная сетка</option>
-                                                <option value="antipyl">Сетка "Антипыль"</option>
-                                                <option value="panorama">Сетка для панорамных окон</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="message">Дополнительная информация</label>
-                                            <textarea id="message" class="form-control"></textarea>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
-                                    </form>
-                                </div>
+                            <div class="contact-text">
+                                <h4>Телефон</h4>
+                                <a href="tel:+74951234567">+3 (7529) 123-45-67</a>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Map -->
-                    <div class="map">
-                        <iframe
-                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a8f3a3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@moskit-setka.ru">info@moskit-setka.ru</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Режим работы</h4>
+                                <p>Пн-Пт: 9:00 - 20:00<br>Сб-Вс: 10:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Мы в соцсетях</h3>
+                    <div class="contact-social">
+                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Оставьте заявку</h3>
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product">Тип сетки</label>
+                            <select id="product" class="form-control">
+                                <option value="standard">Стандартная сетка</option>
+                                <option value="antikoshka">Сетка "Антикошка"</option>
+                                <option value="roll">Рулонная сетка</option>
+                                <option value="door">Дверная сетка</option>
+                                <option value="antipyl">Сетка "Антипыль"</option>
+                                <option value="panorama">Сетка для панорамных окон</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Дополнительная информация</label>
+                            <textarea id="message" class="form-control"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <div class="map">
+        <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a8f3a3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b

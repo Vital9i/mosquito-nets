@@ -5,1030 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Москитные сетки на окна | Производство и установка под ключ</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #4a6fa5;
-            --secondary: #ff7e5f;
-            --dark: #2b3a4a;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html,
-        body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        body {
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-            width: 100%;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        /* Header */
-        header {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo i {
-            color: var(--secondary);
-            margin-right: 10px;
-            font-size: 1.8rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            
-            color: var(--dark);
-            text-decoration:none;
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Бургер-меню */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-            background: none;
-            border: none;
-            z-index: 1001;
-        }
-
-        /* Анимация бургера */
-        .mobile-menu-btn.active i::before {
-            content: "\f00d";
-            /* Иконка крестика */
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/main.png') no-repeat center/cover;
-            display: flex;
-            flex-direction: column;
-            color: white;
-            padding-top: 80px;
-            /* padding-bottom: 200px; */
-        }
-
-        /* Главный контейнер - растягиваем на всю высоту */
-        .hero>.container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            /* Добавляем относительное позиционирование для контейнера */
-            position: relative;
-        }
-
-        .hero-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 0;
-            /* margin: auto 0; */
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: 2px solid var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-secondary:hover {
-            background: transparent;
-            color: var(--secondary);
-        }
-
-        .hero-features {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px 0;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .feature-text h3 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .feature-text p {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--light);
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        .about-list {
-            margin: 25px 0;
-        }
-
-        .about-list li {
-            margin-bottom: 12px;
-            list-style: none;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .about-list i {
-            color: var(--secondary);
-            margin-right: 10px;
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.03);
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 0;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-img {
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .product-card:hover .product-img img {
-            transform: scale(1.1);
-        }
-
-        .product-content {
-            padding: 20px;
-        }
-
-        .product-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .product-content p {
-            color: var(--gray);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .product-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            font-size: 0.85rem;
-        }
-
-        .product-meta span {
-            display: flex;
-            align-items: center;
-            color: var(--gray);
-        }
-
-        .product-meta i {
-            margin-right: 5px;
-            color: var(--secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            background: linear-gradient(135deg, var(--primary) 0%, #3a5a8a 100%);
-            color: white;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
-            opacity: 0.05;
-        }
-
-        .section-title.white h2 {
-            color: white;
-        }
-
-        .section-title.white h2::after {
-            background: white;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .benefit-icon {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-
-        .benefit-card p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-
-        .benefit-number {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 2rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.05);
-        }
-
-        .benefits-cta {
-            text-align: center;
-            margin-top: 50px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .benefits-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background: var(--light);
-            padding: 80px 0;
-        }
-
-        .testimonials-slider {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial-item {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            margin: 10px 15px;
-        }
-
-        .testimonial-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 15px;
-            border: 3px solid rgba(74, 111, 165, 0.2);
-        }
-
-        .testimonial-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .testimonial-text {
-            font-size: 1rem;
-            font-style: italic;
-            color: var(--gray);
-            margin-bottom: 20px;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        .testimonial-text::before,
-        .testimonial-text::after {
-            content: '"';
-            font-size: 2rem;
-            color: rgba(74, 111, 165, 0.2);
-            position: absolute;
-        }
-
-        .testimonial-text::before {
-            top: -15px;
-            left: -5px;
-        }
-
-        .testimonial-text::after {
-            bottom: -30px;
-            right: -5px;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .testimonial-position {
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        .cta h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 25px;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: var(--primary);
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .contact-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .contact-text p,
-        .contact-text a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .contact-text a:hover {
-            color: var(--primary);
-        }
-
-        .contact-social {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-
-        .social-icon:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 0.95rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 0.95rem;
-            transition: border-color 0.3s;
-            border-color: #bfc1c4;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--secondary);
-        }
-
-        .footer-col p {
-            opacity: 0.8;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .container {
-                padding: 0 20px;
-            }
-        }
-
-        @media (max-width: 992px) {
-
-            .features-grid,
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-container,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-img {
-                order: -1;
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 50px 0;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 100px 0 0;
-            }
-
-            .hero-content {
-                padding: 40px 0 30px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .hero-features {
-                position: static;
-                margin-top: 30px;
-
-                /* padding: 25px 0; */
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .feature-item {
-                padding: 15px;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .about-content h2 {
-                font-size: 1.6rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .benefit-card {
-                padding: 25px;
-            }
-
-            .testimonial-item {
-                padding: 25px 20px;
-            }
-
-            .cta h2 {
-                font-size: 1.8rem;
-            }
-
-            .cta p {
-                font-size: 1rem;
-            }
-
-            .contact-container {
-                gap: 30px;
-            }
-
-            .contact-form {
-                padding: 25px;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: -33vh;
-                left: 0;
-                width: 100%;
-                height: 33vh;
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 30px 0;
-                transition: top 0.3s ease;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                top: 70px;
-                left:0;
-            }
-
-            .nav-overlay {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.5);
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.3s;
-                z-index: 999;
-            }
-
-            .nav-overlay.active {
-                opacity: 1;
-                pointer-events: auto;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-                padding: 10px 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
-
-            .section-title h2 {
-                font-size: 1.6rem;
-                padding-bottom: 10px;
-            }
-
-            .section-title h2::after {
-                width: 60px;
-                height: 2px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-col {
-                margin-bottom: 20px;
-            }
-
-            .cta {
-                padding: 60px 0;
-            }
-
-            .cta h2 {
-                font-size: 1.6rem;
-            }
-
-            .benefits-cta {
-                padding: 20px;
-            }
-
-            .benefits-cta p {
-                font-size: 1rem;
-            }
-
-
-        }
-        .animated {
-    animation-fill-mode: both !important;
-    
-}
-.animate-on-scroll {
-    opacity: 0;
-    visibility: hidden;
-    transition: none; /* Убираем transition для начального состояния */
-}
-
-.animate-on-scroll.animated {
-    opacity: 1;
-    visibility: visible;
-}
-    </style>
 </head>
 
 <body>
@@ -1038,7 +18,7 @@
             <div class="header-container">
                 <a href="#" class="logo">
                     <i class="fas fa-mosquito"></i>
-                    <span>Москит</span>Сетка
+                    <span>Москит Сетка</span>
                 </a>
 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1062,7 +42,7 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content animate__animated animate__fadeInUp">
-                <h1>Москитные сетки на окна по индивидуальным размерам</h1>
+                <h1>Москитные сетки на окна по индивидуальным размерам в Минске и области</h1>
                 <p>Изготовление и установка качественных москитных сеток для любых типов окон. Защита от насекомых без
                     препятствий для свежего воздуха.</p>
                 <div class="hero-btns">
@@ -1107,7 +87,7 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="feature-text">
-                            <h3>Гарантия 3 года</h3>
+                            <h3>Гарантия</h3>
                             <p>На все виды сеток</p>
                         </div>
                     </div>
@@ -1125,7 +105,7 @@
 
             <div class="about-container">
                 <div class="about-content animate-on-scroll" data-animation="animate__fadeInLeft">
-                    <h2>Профессиональные москитные сетки с 2010 года</h2>
+                    <h2>Профессиональный изготовитель москитных сеток с 2009 года</h2>
                     <p>Мы специализируемся на производстве и установке москитных сеток всех типов для любых оконных
                         конструкций. Наша продукция - это сочетание современных технологий, качественных материалов и
                         внимания к деталям.</p>
@@ -1133,7 +113,7 @@
                     <div class="about-list">
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <div>Более 10 лет опыта в производстве москитных сеток</div>
+                            <div>Более 15 лет опыта в производстве москитных сеток</div>
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
@@ -1164,11 +144,11 @@
     <div class="container">
         <h2 class="cta-title animate-on-scroll" data-animation="animate__fadeInDown">Акция до конца мая!</h2>
         <p class="cta-text animate-on-scroll" data-animation="animate__fadeInDown" data-animation-delay="0.2s">
-            Оставьте заявку прямо сейчас и получите смазку механизмов фурнитуры в подарок!
+            При заказе москитной сетки - смазка механизмов фурнитуры в подарок!
         </p>
         <a href="#contact" class="btn btn-primary cta-btn animate-on-scroll" 
            data-animation="animate__fadeInUp" data-animation-delay="0.4s">
-            Оставить заявку
+            связаться с нами
         </a>
     </div>
 </section>
@@ -1188,11 +168,11 @@
                     <div class="product-content">
                         <h3>Стандартная сетка</h3>
                         <p>Классическая москитная сетка в алюминиевой раме с креплением "Z-образные кронштейны".</p>
-                        <div class="product-price">от 1 500 ₽</div>
+                        <div class="product-price">59 руб / м2</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
-                            <span><i class="fas fa-clock"></i> 1 день</span>
-                            <span><i class="fas fa-shield-alt"></i> 3 года</span>
+                            <span><i class="fas fa-clock"></i> 1-2 дня</span>
+                            <span><i class="fas fa-shield-alt"></i>1-3 года</span>
                         </div>
                     </div>
                 </div>
@@ -1204,11 +184,11 @@
                     <div class="product-content">
                         <h3>Сетка "Антикошка"</h3>
                         <p>Усиленная сетка из прочного материала, устойчивого к когтям домашних животных.</p>
-                        <div class="product-price">от 3 500 ₽</div>
+                        <div class="product-price">109 руб / м2</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
-                            <span><i class="fas fa-clock"></i> 2 дня</span>
-                            <span><i class="fas fa-shield-alt"></i> 5 лет</span>
+                            <span><i class="fas fa-clock"></i> 1-2 дня</span>
+                            <span><i class="fas fa-shield-alt"></i>1-3 года</span>
                         </div>
                     </div>
                 </div>
@@ -1220,11 +200,11 @@
                     <div class="product-content">
                         <h3>Рулонная сетка</h3>
                         <p>Компактная система с механизмом сворачивания, когда защита не нужна.</p>
-                        <div class="product-price">от 4 200 ₽</div>
+                        <div class="product-price">от 100руб / м2</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 3 дня</span>
-                            <span><i class="fas fa-shield-alt"></i> 3 года</span>
+                            <span><i class="fas fa-shield-alt"></i> 2 года</span>
                         </div>
                     </div>
                 </div>
@@ -1236,11 +216,11 @@
                     <div class="product-content">
                         <h3>Дверная сетка</h3>
                         <p>Специальная конструкция для дверей с механизмом самозакрывания.</p>
-                        <div class="product-price">от 3 800 ₽</div>
+                        <div class="product-price">от 80руб / м2</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 2 дня</span>
-                            <span><i class="fas fa-shield-alt"></i> 3 года</span>
+                            <span><i class="fas fa-shield-alt"></i> 1-3 года</span>
                         </div>
                     </div>
                 </div>
@@ -1252,11 +232,11 @@
                     <div class="product-content">
                         <h3>Сетка "Антипыль"</h3>
                         <p>Специальное мелкоячеистое полотно, задерживающее пыльцу и мелкую пыль.</p>
-                        <div class="product-price">от 2 800 ₽</div>
+                        <div class="product-price">109 руб / м2</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 2 дня</span>
-                            <span><i class="fas fa-shield-alt"></i> 3 года</span>
+                            <span><i class="fas fa-shield-alt"></i> 1-3 года</span>
                         </div>
                     </div>
                 </div>
@@ -1268,14 +248,91 @@
                     <div class="product-content">
                         <h3>Сетка для раздвижных окон</h3>
                         <p>Специальная конструкция для раздвижных систем.</p>
-                        <div class="product-price">от 6 500 ₽</div>
+                        <div class="product-price">59 руб / м2</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 3-5 дней</span>
-                            <span><i class="fas fa-shield-alt"></i> 5 лет</span>
+                            <span><i class="fas fa-shield-alt"></i>1-4 года</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Benefits -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-title white">
+                <h2>Почему выбирают наши сетки</h2>
+                <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантия 1-3 года</h3>
+                    <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
+                    <div class="benefit-number">01</div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Точные замеры</h3>
+                    <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
+                    <div class="benefit-number">02</div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Быстрое производство</h3>
+                    <p>Изготовление за 1-2 деня благодаря собственному производству в Минске</p>
+                    <div class="benefit-number">03</div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3>Защита от животных</h3>
+                    <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
+                    <div class="benefit-number">04</div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Антипыль и антипух</h3>
+                    <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
+                    <div class="benefit-number">05</div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Цвет на выбор</h3>
+                    <p>Множество вариантов расцветок рамок под любой дизайн окон и интерьера</p>
+                    <div class="benefit-number">06</div>
+                </div>
+            </div>
+
+            <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
+                <a href="#contact" class="btn btn-secondary">Консультация</a>
             </div>
         </div>
     </section>
@@ -1379,85 +436,6 @@
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="benefits" id="benefits">
-        <div class="container">
-            <div class="section-title white">
-                <h2>Почему выбирают наши сетки</h2>
-                <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
-            </div>
-
-            <div class="benefits-grid">
-                <!-- Benefit 1 -->
-                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Гарантия 3 года</h3>
-                    <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
-                    <div class="benefit-number">01</div>
-                </div>
-
-                <!-- Benefit 2 -->
-                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-ruler-combined"></i>
-                    </div>
-                    <h3>Точные замеры</h3>
-                    <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
-                    <div class="benefit-number">02</div>
-                </div>
-
-                <!-- Benefit 3 -->
-                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Быстрое производство</h3>
-                    <p>Изготовление за 1 день благодаря собственному производству в Минске</p>
-                    <div class="benefit-number">03</div>
-                </div>
-
-                <!-- Benefit 4 -->
-                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-cat"></i>
-                    </div>
-                    <h3>Защита от животных</h3>
-                    <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
-                    <div class="benefit-number">04</div>
-                </div>
-
-                <!-- Benefit 5 -->
-                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3>Антипыль и антипух</h3>
-                    <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
-                    <div class="benefit-number">05</div>
-                </div>
-
-                <!-- Benefit 6 -->
-                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Цвет на выбор</h3>
-                    <p>12 вариантов расцветок рамок под любой дизайн окон и интерьера</p>
-                    <div class="benefit-number">06</div>
-                </div>
-            </div>
-
-            <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
-                <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
-                <a href="#contact" class="btn btn-secondary">Консультация</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Продолжение предыдущего кода (вставляется после секции Benefits) -->
-
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
@@ -1475,7 +453,7 @@
                         теперь можно спокойно проветривать, не боясь, что залетит тополиный пух. Мастер
                         приехал точно в назначенное время, сделал все аккуратно.
                     </div>
-                    <div class="testimonial-author">Марина Иванова</div>
+                    <div class="testimonial-author">Марина Сапошина</div>
                     <div class="testimonial-position">г. Минск</div>
                 </div>
 
@@ -1489,7 +467,7 @@
                         действительно на высоте, рекомендую!
                     </div>
                     <div class="testimonial-author">Алексей Петров</div>
-                    <div class="testimonial-position">г. Минск</div>
+                    <div class="testimonial-position">г. Фаниполь</div>
                 </div>
 
                 <div class="testimonial-item">
@@ -1542,7 +520,7 @@
                     <h3>Услуги</h3>
                     <ul class="footer-links">
                         <li><a href="#">Бесплатный замер</a></li>
-                        <li><a href="#">Изготовление за 1 день</a></li>
+                        <li><a href="#">Изготовление за 1-2 деня</a></li>
                         <li><a href="#">Установка</a></li>
                         <li><a href="#">Ремонт сеток</a></li>
                         <li><a href="#">Замена полотна</a></li>

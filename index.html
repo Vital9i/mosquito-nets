@@ -48,6 +48,7 @@
 
         /* Header */
         header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: fixed;
             top: 0;
             left: 0;
@@ -89,8 +90,9 @@
         }
 
         .nav-links a {
+            
             color: var(--dark);
-            text-decoration: none;
+            text-decoration:none;
             font-weight: 600;
             transition: color 0.3s;
             position: relative;
@@ -112,6 +114,7 @@
             width: 100%;
         }
 
+        /* Бургер-меню */
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
@@ -119,6 +122,13 @@
             color: var(--dark);
             background: none;
             border: none;
+            z-index: 1001;
+        }
+
+        /* Анимация бургера */
+        .mobile-menu-btn.active i::before {
+            content: "\f00d";
+            /* Иконка крестика */
         }
 
         /* Hero Section */
@@ -192,8 +202,8 @@
 
         .btn-primary:hover {
             background: transparent;
-            color: white;
-            border-color: white;
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
         .btn-secondary {
@@ -528,7 +538,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
-            margin: 0 15px;
+            margin: 10px 15px;
         }
 
         .testimonial-avatar {
@@ -693,6 +703,7 @@
             background: var(--light);
             padding: 30px;
             border-radius: 10px;
+
         }
 
         .form-group {
@@ -714,6 +725,7 @@
             border-radius: 5px;
             font-size: 0.95rem;
             transition: border-color 0.3s;
+            border-color: #bfc1c4;
         }
 
         .form-control:focus {
@@ -855,7 +867,7 @@
             .hero-features {
                 position: static;
                 margin-top: 30px;
-                
+
                 /* padding: 25px 0; */
             }
 
@@ -917,20 +929,40 @@
 
             .nav-links {
                 position: fixed;
-                top: 70px;
-                left: -100%;
+                top: -33vh;
+                left: 0;
                 width: 100%;
-                height: calc(100vh - 70px);
+                height: 33vh;
                 background: white;
                 flex-direction: column;
                 align-items: center;
                 padding: 30px 0;
-                transition: left 0.3s;
+                transition: top 0.3s ease;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
             }
 
             .nav-links.active {
+                top: 70px;
+                left:0;
+            }
+
+            .nav-overlay {
+                position: fixed;
+                top: 70px;
                 left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+                z-index: 999;
+            }
+
+            .nav-overlay.active {
+                opacity: 1;
+                pointer-events: auto;
             }
 
             .nav-links li {
@@ -939,6 +971,7 @@
 
             .nav-links a {
                 font-size: 1.1rem;
+                padding: 10px 20px;
             }
         }
 
@@ -978,7 +1011,23 @@
             .benefits-cta p {
                 font-size: 1rem;
             }
+
+
         }
+        .animated {
+    animation-fill-mode: both !important;
+    
+}
+.animate-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+    transition: none; /* Убираем transition для начального состояния */
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    visibility: visible;
+}
     </style>
 </head>
 
@@ -992,9 +1041,11 @@
                     <span>Москит</span>Сетка
                 </a>
 
-                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
+
+                <div class="nav-overlay" id="navOverlay"></div>
 
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Главная</a></li>
@@ -1068,12 +1119,12 @@
     <!-- About -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animate-on-scroll" data-animation="animate__fadeInDown">
                 <h2>О нашей компании</h2>
             </div>
 
             <div class="about-container">
-                <div class="about-content">
+                <div class="about-content animate-on-scroll" data-animation="animate__fadeInLeft">
                     <h2>Профессиональные москитные сетки с 2010 года</h2>
                     <p>Мы специализируемся на производстве и установке москитных сеток всех типов для любых оконных
                         конструкций. Наша продукция - это сочетание современных технологий, качественных материалов и
@@ -1101,12 +1152,26 @@
                     <a href="#contact" class="btn btn-primary">Связаться с нами</a>
                 </div>
 
-                <div class="about-img">
+                <div class="about-img animate-on-scroll" data-animation="animate__fadeInRight">
                     <img src='img/about us.png' alt="О компании">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2 class="cta-title animate-on-scroll" data-animation="animate__fadeInDown">Акция до конца мая!</h2>
+        <p class="cta-text animate-on-scroll" data-animation="animate__fadeInDown" data-animation-delay="0.2s">
+            Оставьте заявку прямо сейчас и получите смазку механизмов фурнитуры в подарок!
+        </p>
+        <a href="#contact" class="btn btn-primary cta-btn animate-on-scroll" 
+           data-animation="animate__fadeInUp" data-animation-delay="0.4s">
+            Оставить заявку
+        </a>
+    </div>
+</section>
 
     <!-- Products -->
     <section class="products" id="products">
@@ -1116,7 +1181,7 @@
             </div>
 
             <div class="products-grid">
-                <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.1s">
                     <div class="product-img">
                         <img src="img/standart.png" alt="Стандартная сетка">
                     </div>
@@ -1132,9 +1197,9 @@
                     </div>
                 </div>
 
-                <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                   <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.2s">
                     <div class="product-img">
-                        <img src="img/antikoshka.png" alt="Сетка " Антикошка"">
+                        <img src="img/antikoshka.png" alt="Сетка Антикошка">
                     </div>
                     <div class="product-content">
                         <h3>Сетка "Антикошка"</h3>
@@ -1148,7 +1213,7 @@
                     </div>
                 </div>
 
-                <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.3s">
                     <div class="product-img">
                         <img src="img/rylon.png" alt="Рулонная сетка">
                     </div>
@@ -1164,7 +1229,7 @@
                     </div>
                 </div>
 
-                <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.4s">
                     <div class="product-img">
                         <img src="img/door.png" alt="Дверная сетка">
                     </div>
@@ -1180,7 +1245,7 @@
                     </div>
                 </div>
 
-                <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+               <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.5s">
                     <div class="product-img">
                         <img src="img/antiPil.png" alt="Сетка Антипыль">
                     </div>
@@ -1196,7 +1261,7 @@
                     </div>
                 </div>
 
-                <div class="product-card animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.6s">>
                     <div class="product-img">
                         <img src="img/rasdvisnaya.png" alt="Сетка для раздвижных окон">
                     </div>
@@ -1212,155 +1277,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <!-- <section class="benefits" id="benefits">
-        <div class="container">
-            <div class="section-title white">
-                <h2>Почему выбирают наши сетки</h2>
-            </div>
-
-            <div class="benefits-grid">
-                <div></div> -->
-    <!-- Benefits -->
-    <section class="benefits" id="benefits">
-        <div class="container">
-            <div class="section-title white">
-                <h2>Почему выбирают наши сетки</h2>
-                <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
-            </div>
-
-            <div class="benefits-grid">
-                <!-- Benefit 1 -->
-                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Гарантия 3 года</h3>
-                    <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
-                    <div class="benefit-number">01</div>
-                </div>
-
-                <!-- Benefit 2 -->
-                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    <div class="benefit-icon">
-                        <i class="fas fa-ruler-combined"></i>
-                    </div>
-                    <h3>Точные замеры</h3>
-                    <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
-                    <div class="benefit-number">02</div>
-                </div>
-
-                <!-- Benefit 3 -->
-                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Быстрое производство</h3>
-                    <p>Изготовление за 1 день благодаря собственному производству в Минске</p>
-                    <div class="benefit-number">03</div>
-                </div>
-
-                <!-- Benefit 4 -->
-                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    <div class="benefit-icon">
-                        <i class="fas fa-cat"></i>
-                    </div>
-                    <h3>Защита от животных</h3>
-                    <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
-                    <div class="benefit-number">04</div>
-                </div>
-
-                <!-- Benefit 5 -->
-                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.5s">
-                    <div class="benefit-icon">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3>Антипыль и антипух</h3>
-                    <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
-                    <div class="benefit-number">05</div>
-                </div>
-
-                <!-- Benefit 6 -->
-                <div class="benefit-card animate__animated animate__fadeInUp" data-wow-delay="0.6s">
-                    <div class="benefit-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Цвет на выбор</h3>
-                    <p>12 вариантов расцветок рамок под любой дизайн окон и интерьера</p>
-                    <div class="benefit-number">06</div>
-                </div>
-            </div>
-
-            <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
-                <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
-                <a href="#contact" class="btn btn-secondary">Консультация</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Продолжение предыдущего кода (вставляется после секции Benefits) -->
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Отзывы наших клиентов</h2>
-            </div>
-
-            <div class="testimonials-slider">
-                <div class="testimonial-item">
-                    <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Марина Иванова">
-                    </div>
-                    <div class="testimonial-text">
-                        Заказывала сетки "Антипыль" для всей квартиры. Очень довольна результатом -
-                        теперь можно спокойно проветривать, не боясь, что залетит тополиный пух. Мастер
-                        приехал точно в назначенное время, сделал все аккуратно.
-                    </div>
-                    <div class="testimonial-author">Марина Иванова</div>
-                    <div class="testimonial-position">г. Минск</div>
-                </div>
-
-                <div class="testimonial-item">
-                    <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей Петров">
-                    </div>
-                    <div class="testimonial-text">
-                        Установили сетку "Антикошка" после того, как наш кот порвал обычную. Прошло уже
-                        полгода - сетка как новая, хотя кот регулярно пытается на нее залезть. Качество
-                        действительно на высоте, рекомендую!
-                    </div>
-                    <div class="testimonial-author">Алексей Петров</div>
-                    <div class="testimonial-position">г. Минск</div>
-                </div>
-
-                <div class="testimonial-item">
-                    <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Елена Смирнова">
-                    </div>
-                    <div class="testimonial-text">
-                        Заказывала рулонные сетки на дачу - очень удобно, когда приезжаем только на
-                        выходные. Установили быстро, объяснили как пользоваться. На зиму сетки убирать
-                        не нужно, что очень удобно. Спасибо за качественную работу!
-                    </div>
-                    <div class="testimonial-author">Елена Смирнова</div>
-                    <div class="testimonial-position">г.Минск</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Готовы заказать москитные сетки?</h2>
-            <p class="animate__animated animate__fadeInDown animate__delay-1s">Оставьте заявку прямо
-                сейчас и получите бесплатный замер и 5% скидку на первый заказ!</p>
-            <a href="#contact" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-2s">Оставить
-                заявку</a>
         </div>
     </section>
 
@@ -1440,11 +1356,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control">
-                        </div>
-
-                        <div class="form-group">
                             <label for="product">Тип сетки</label>
                             <select id="product" class="form-control">
                                 <option value="standard">Стандартная сетка</option>
@@ -1468,7 +1379,283 @@
         </div>
     </section>
 
-    <!-- Map -->
-    <div class="map">
-        <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a8f3a3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b
+    <!-- Benefits -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-title white">
+                <h2>Почему выбирают наши сетки</h2>
+                <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантия 3 года</h3>
+                    <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
+                    <div class="benefit-number">01</div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Точные замеры</h3>
+                    <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
+                    <div class="benefit-number">02</div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Быстрое производство</h3>
+                    <p>Изготовление за 1 день благодаря собственному производству в Минске</p>
+                    <div class="benefit-number">03</div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3>Защита от животных</h3>
+                    <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
+                    <div class="benefit-number">04</div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Антипыль и антипух</h3>
+                    <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
+                    <div class="benefit-number">05</div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Цвет на выбор</h3>
+                    <p>12 вариантов расцветок рамок под любой дизайн окон и интерьера</p>
+                    <div class="benefit-number">06</div>
+                </div>
+            </div>
+
+            <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
+                <a href="#contact" class="btn btn-secondary">Консультация</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Продолжение предыдущего кода (вставляется после секции Benefits) -->
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы наших клиентов</h2>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Марина Иванова">
+                    </div>
+                    <div class="testimonial-text">
+                        Заказывала сетки "Антипыль" для всей квартиры. Очень довольна результатом -
+                        теперь можно спокойно проветривать, не боясь, что залетит тополиный пух. Мастер
+                        приехал точно в назначенное время, сделал все аккуратно.
+                    </div>
+                    <div class="testimonial-author">Марина Иванова</div>
+                    <div class="testimonial-position">г. Минск</div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей Петров">
+                    </div>
+                    <div class="testimonial-text">
+                        Установили сетку "Антикошка" после того, как наш кот порвал обычную. Прошло уже
+                        полгода - сетка как новая, хотя кот регулярно пытается на нее залезть. Качество
+                        действительно на высоте, рекомендую!
+                    </div>
+                    <div class="testimonial-author">Алексей Петров</div>
+                    <div class="testimonial-position">г. Минск</div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Елена Смирнова">
+                    </div>
+                    <div class="testimonial-text">
+                        Заказывала рулонные сетки на дачу - очень удобно, когда приезжаем только на
+                        выходные. Установили быстро, объяснили как пользоваться. На зиму сетки убирать
+                        не нужно, что очень удобно. Спасибо за качественную работу!
+                    </div>
+                    <div class="testimonial-author">Елена Смирнова</div>
+                    <div class="testimonial-position">г.Минск</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <!-- Колонка 1: О компании -->
+                <div class="footer-col">
+                    <h3>О компании</h3>
+                    <p>Производство и установка москитных сеток с 2010 года. Качественные материалы, профессиональный
+                        монтаж и гарантия до 5 лет.</p>
+                    <div class="contact-social" style="margin-top: 15px;">
+                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Колонка 2: Продукция -->
+                <div class="footer-col">
+                    <h3>Продукция</h3>
+                    <ul class="footer-links">
+                        <li><a href="#products">Стандартные сетки</a></li>
+                        <li><a href="#products">Антикошка</a></li>
+                        <li><a href="#products">Рулонные сетки</a></li>
+                        <li><a href="#products">Дверные сетки</a></li>
+                        <li><a href="#products">Антипыль</a></li>
+                        <li><a href="#products">Для раздвижных окон</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 3: Услуги -->
+                <div class="footer-col">
+                    <h3>Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Бесплатный замер</a></li>
+                        <li><a href="#">Изготовление за 1 день</a></li>
+                        <li><a href="#">Установка</a></li>
+                        <li><a href="#">Ремонт сеток</a></li>
+                        <li><a href="#">Замена полотна</a></li>
+                        <li><a href="#">Выезд по области</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 4: Контакты -->
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--secondary);"></i> г.
+                            Минск, ул. Производственная, 15</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--secondary);"></i> +3
+                            (7529) 123-45-67</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 8px; color: var(--secondary);"></i>
+                            info@moskit-setka.ru</li>
+                        <li><i class="fas fa-clock" style="margin-right: 8px; color: var(--secondary);"></i> Пн-Пт:
+                            9:00-20:00</li>
+                        <li style="margin-top: 15px;">
+                            <a href="#contact" class="btn btn-secondary"
+                                style="padding: 8px 15px; font-size: 0.85rem;">Заказать звонок</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 "МоскитСетка" - производство москитных сеток. Все права защищены.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">
+                    <a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Политика
+                        конфиденциальности</a> |
+                    <a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Условия использования</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navOverlay = document.getElementById('navOverlay');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        
+        // Блокировка прокрутки при открытом меню
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Закрытие меню при клике на overlay
+    navOverlay.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        navOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+});
+</script>
+<script>
+    // Анимации при скролле
+   document.addEventListener('DOMContentLoaded', function() {
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    // Флаг для отслеживания инициализации
+    let animationInitialized = false;
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const handleIntersection = (entries, observer) => {
+        entries.forEach(entry => {
+            // Проверяем, что элемент пересекается и анимация ещё не применялась
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                const animationClass = entry.target.getAttribute('data-animation');
+                const delay = entry.target.getAttribute('data-animation-delay') || '0s';
+                
+                entry.target.style.animationDelay = delay;
+                entry.target.classList.add('animate__animated', animationClass, 'animated');
+                
+                // Прекращаем наблюдение за элементом
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    // Инициализация только после небольшой задержки
+    setTimeout(() => {
+        animationInitialized = true;
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    }, 300); // 300ms задержка для инициализации
+});
+</script>
+</body>

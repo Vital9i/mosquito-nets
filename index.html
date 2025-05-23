@@ -20,11 +20,9 @@
                     <i class="fas fa-mosquito"></i>
                     <span>Москит Сетка</span>
                 </a>
-
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
                     <i class="fas fa-bars"></i>
                 </button>
-
                 <div class="nav-overlay" id="navOverlay"></div>
 
                 <ul class="nav-links" id="navLinks">
@@ -140,18 +138,18 @@
     </section>
 
     <!-- CTA -->
-<section class="cta">
-    <div class="container">
-        <h2 class="cta-title animate-on-scroll" data-animation="animate__fadeInDown">Акция до конца мая!</h2>
-        <p class="cta-text animate-on-scroll" data-animation="animate__fadeInDown" data-animation-delay="0.2s">
-            При заказе москитной сетки - смазка механизмов фурнитуры в подарок!
-        </p>
-        <a href="#contact" class="btn btn-primary cta-btn animate-on-scroll" 
-           data-animation="animate__fadeInUp" data-animation-delay="0.4s">
-            связаться с нами
-        </a>
-    </div>
-</section>
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll" data-animation="animate__fadeInDown">Акция до конца мая!</h2>
+            <p class="cta-text animate-on-scroll" data-animation="animate__fadeInDown" data-animation-delay="0.2s">
+                При заказе москитной сетки - смазка механизмов фурнитуры в подарок!
+            </p>
+            <a href="#contact" class="btn btn-primary cta-btn animate-on-scroll" data-animation="animate__fadeInUp"
+                data-animation-delay="0.4s">
+                связаться с нами
+            </a>
+        </div>
+    </section>
 
     <!-- Products -->
     <section class="products" id="products">
@@ -161,7 +159,8 @@
             </div>
 
             <div class="products-grid">
-                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.1s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
+                    data-animation-delay="0.1s">
                     <div class="product-img">
                         <img src="img/standart.png" alt="Стандартная сетка">
                     </div>
@@ -177,7 +176,8 @@
                     </div>
                 </div>
 
-                   <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.2s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
+                    data-animation-delay="0.2s">
                     <div class="product-img">
                         <img src="img/antikoshka.png" alt="Сетка Антикошка">
                     </div>
@@ -193,7 +193,8 @@
                     </div>
                 </div>
 
-                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.3s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
+                    data-animation-delay="0.3s">
                     <div class="product-img">
                         <img src="img/rylon.png" alt="Рулонная сетка">
                     </div>
@@ -209,7 +210,8 @@
                     </div>
                 </div>
 
-                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.4s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
+                    data-animation-delay="0.4s">
                     <div class="product-img">
                         <img src="img/door.png" alt="Дверная сетка">
                     </div>
@@ -225,7 +227,8 @@
                     </div>
                 </div>
 
-               <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.5s">
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
+                    data-animation-delay="0.5s">
                     <div class="product-img">
                         <img src="img/antiPil.png" alt="Сетка Антипыль">
                     </div>
@@ -241,7 +244,8 @@
                     </div>
                 </div>
 
-                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp" data-animation-delay="0.6s">>
+                <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
+                    data-animation-delay="0.6s">>
                     <div class="product-img">
                         <img src="img/rasdvisnaya.png" alt="Сетка для раздвижных окон">
                     </div>
@@ -260,7 +264,7 @@
         </div>
     </section>
 
-        <!-- Benefits -->
+    <!-- Benefits -->
     <section class="benefits" id="benefits">
         <div class="container">
             <div class="section-title white">
@@ -559,81 +563,81 @@
         </div>
     </footer>
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    const navOverlay = document.getElementById('navOverlay');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-        
-        // Блокировка прокрутки при открытом меню
-        if (navLinks.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    });
-    
-    // Закрытие меню при клике на overlay
-    navOverlay.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-        navOverlay.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-    
-    // Закрытие меню при клике на ссылку
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            navOverlay.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            document.body.style.overflow = '';
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+
+            mobileMenuBtn.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+                navOverlay.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+
+                // Блокировка прокрутки при открытом меню
+                if (navLinks.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Закрытие меню при клике на overlay
+            navOverlay.addEventListener('click', function () {
+                navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Закрытие меню при клике на ссылку
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
         });
-    });
-});
-</script>
-<script>
-    // Анимации при скролле
-   document.addEventListener('DOMContentLoaded', function() {
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
-    
-    // Флаг для отслеживания инициализации
-    let animationInitialized = false;
+    </script>
+    <script>
+        // Анимации при скролле
+        document.addEventListener('DOMContentLoaded', function () {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
 
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
+            // Флаг для отслеживания инициализации
+            let animationInitialized = false;
 
-    const handleIntersection = (entries, observer) => {
-        entries.forEach(entry => {
-            // Проверяем, что элемент пересекается и анимация ещё не применялась
-            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                const animationClass = entry.target.getAttribute('data-animation');
-                const delay = entry.target.getAttribute('data-animation-delay') || '0s';
-                
-                entry.target.style.animationDelay = delay;
-                entry.target.classList.add('animate__animated', animationClass, 'animated');
-                
-                // Прекращаем наблюдение за элементом
-                observer.unobserve(entry.target);
-            }
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const handleIntersection = (entries, observer) => {
+                entries.forEach(entry => {
+                    // Проверяем, что элемент пересекается и анимация ещё не применялась
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        const animationClass = entry.target.getAttribute('data-animation');
+                        const delay = entry.target.getAttribute('data-animation-delay') || '0s';
+
+                        entry.target.style.animationDelay = delay;
+                        entry.target.classList.add('animate__animated', animationClass, 'animated');
+
+                        // Прекращаем наблюдение за элементом
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+            // Инициализация только после небольшой задержки
+            setTimeout(() => {
+                animationInitialized = true;
+                animateElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }, 300); // 300ms задержка для инициализации
         });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    // Инициализация только после небольшой задержки
-    setTimeout(() => {
-        animationInitialized = true;
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-    }, 300); // 300ms задержка для инициализации
-});
-</script>
+    </script>
 </body>

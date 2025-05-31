@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(102273072, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+    </script>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -18,13 +27,31 @@
             <div class="header-container">
                 <a href="#" class="logo">
                     <i class="fas fa-mosquito"></i>
-                    <span>Москит Сетка</span>
+                    <span class="logo-text">Москит Сетка</span>
                 </a>
+
+                <div class="phone-container">
+                    <div class="messenger-icons">
+                        <a href="viber://chat?number=375291884907" class="messenger-icon viber" aria-label="Viber"
+                            target="_blank">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                        <a href="https://t.me/+375291884907" class="messenger-icon telegram" aria-label="Telegram"
+                            target="_blank">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="https://wa.me/375291884907" class="messenger-icon whatsapp" aria-label="WhatsApp"
+                            target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <a href="tel:+375291884907" class="phone-link">+375 (29) 188-49-07</a>
+                </div>
+
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="nav-overlay" id="navOverlay"></div>
-
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Главная</a></li>
                     <li><a href="#about">О нас</a></li>
@@ -49,41 +76,32 @@
                 </div>
             </div>
         </div>
-
         <div class="hero-features">
             <div class="container">
                 <div class="features-grid">
                     <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-ruler-combined"></i>
-                        </div>
+                        <div class="feature-icon"><i class="fas fa-ruler-combined"></i></div>
                         <div class="feature-text">
                             <h3>Бесплатный замер</h3>
                             <p>Точные замеры ваших окон</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
+                        <div class="feature-icon"><i class="fas fa-tools"></i></div>
                         <div class="feature-text">
                             <h3>Свое производство</h3>
                             <p>Изготовление за 1-2 дня</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
                         <div class="feature-text">
                             <h3>Доставка и установка</h3>
                             <p>Быстро и аккуратно</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="feature-text">
                             <h3>Гарантия</h3>
                             <p>На все виды сеток</p>
@@ -100,38 +118,25 @@
             <div class="section-title animate-on-scroll" data-animation="animate__fadeInDown">
                 <h2>О нашей компании</h2>
             </div>
-
             <div class="about-container">
                 <div class="about-content animate-on-scroll" data-animation="animate__fadeInLeft">
                     <h2>Профессиональный изготовитель москитных сеток с 2009 года</h2>
                     <p>Мы специализируемся на производстве и установке москитных сеток всех типов для любых оконных
                         конструкций. Наша продукция - это сочетание современных технологий, качественных материалов и
                         внимания к деталям.</p>
-
                     <div class="about-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>Более 15 лет опыта в производстве москитных сеток</div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>Используем только сертифицированные материалы</div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>Собственное производство в Минске</div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>Более 5000 довольных клиентов</div>
-                        </li>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Более 15 лет опыта в производстве москитных сеток
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Используем только сертифицированные материалы</li>
+                            <li><i class="fas fa-check-circle"></i> Собственное производство в Минске</li>
+                            <li><i class="fas fa-check-circle"></i> Более 5000 довольных клиентов</li>
+                        </ul>
                     </div>
-
                     <a href="#contact" class="btn btn-primary">Связаться с нами</a>
                 </div>
-
                 <div class="about-img animate-on-scroll" data-animation="animate__fadeInRight">
-                    <img src='img/about us.png' alt="О компании">
+                    <img src='img/about_us.png' alt="О компании">
                 </div>
             </div>
         </div>
@@ -140,14 +145,12 @@
     <!-- CTA -->
     <section class="cta">
         <div class="container">
-            <h2 class="cta-title animate-on-scroll" data-animation="animate__fadeInDown">Акция до конца мая!</h2>
+            <h2 class="cta-title animate-on-scroll" data-animation="animate__fadeInDown">Акция до конца июня!</h2>
             <p class="cta-text animate-on-scroll" data-animation="animate__fadeInDown" data-animation-delay="0.2s">
                 При заказе москитной сетки - смазка механизмов фурнитуры в подарок!
             </p>
             <a href="#contact" class="btn btn-primary cta-btn animate-on-scroll" data-animation="animate__fadeInUp"
-                data-animation-delay="0.4s">
-                связаться с нами
-            </a>
+                data-animation-delay="0.4s">связаться с нами</a>
         </div>
     </section>
 
@@ -157,17 +160,14 @@
             <div class="section-title">
                 <h2>Наша продукция</h2>
             </div>
-
             <div class="products-grid">
                 <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
                     data-animation-delay="0.1s">
-                    <div class="product-img">
-                        <img src="img/standart.png" alt="Стандартная сетка">
-                    </div>
+                    <div class="product-img"><img src="img/standart.png" alt="Стандартная сетка"></div>
                     <div class="product-content">
                         <h3>Стандартная сетка</h3>
                         <p>Классическая москитная сетка в алюминиевой раме с креплением "Z-образные кронштейны".</p>
-                        <div class="product-price">59 руб / м2</div>
+                        <div class="product-price">от 50 руб</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 1-2 дня</span>
@@ -175,16 +175,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
                     data-animation-delay="0.2s">
-                    <div class="product-img">
-                        <img src="img/antikoshka.png" alt="Сетка Антикошка">
-                    </div>
+                    <div class="product-img"><img src="img/antikoshka.png" alt="Сетка Антикошка"></div>
                     <div class="product-content">
                         <h3>Сетка "Антикошка"</h3>
                         <p>Усиленная сетка из прочного материала, устойчивого к когтям домашних животных.</p>
-                        <div class="product-price">109 руб / м2</div>
+                        <div class="product-price">от 105 руб</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 1-2 дня</span>
@@ -192,16 +189,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
                     data-animation-delay="0.3s">
-                    <div class="product-img">
-                        <img src="img/rylon.png" alt="Рулонная сетка">
-                    </div>
+                    <div class="product-img"><img src="img/rylon.png" alt="Рулонная сетка"></div>
                     <div class="product-content">
                         <h3>Рулонная сетка</h3>
                         <p>Компактная система с механизмом сворачивания, когда защита не нужна.</p>
-                        <div class="product-price">от 100руб / м2</div>
+                        <div class="product-price">от 170руб</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 3 дня</span>
@@ -209,16 +203,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
                     data-animation-delay="0.4s">
-                    <div class="product-img">
-                        <img src="img/door.png" alt="Дверная сетка">
-                    </div>
+                    <div class="product-img"><img src="img/door.png" alt="Дверная сетка"></div>
                     <div class="product-content">
                         <h3>Дверная сетка</h3>
                         <p>Специальная конструкция для дверей с механизмом самозакрывания.</p>
-                        <div class="product-price">от 80руб / м2</div>
+                        <div class="product-price">от 180руб</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 2 дня</span>
@@ -226,16 +217,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
                     data-animation-delay="0.5s">
-                    <div class="product-img">
-                        <img src="img/antiPil.png" alt="Сетка Антипыль">
-                    </div>
+                    <div class="product-img"><img src="img/antiPil.png" alt="Сетка Антипыль"></div>
                     <div class="product-content">
                         <h3>Сетка "Антипыль"</h3>
                         <p>Специальное мелкоячеистое полотно, задерживающее пыльцу и мелкую пыль.</p>
-                        <div class="product-price">109 руб / м2</div>
+                        <div class="product-price">от 100 руб</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 2 дня</span>
@@ -243,16 +231,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="product-card animate-on-scroll" data-animation="animate__fadeInUp"
-                    data-animation-delay="0.6s">>
-                    <div class="product-img">
-                        <img src="img/rasdvisnaya.png" alt="Сетка для раздвижных окон">
-                    </div>
+                    data-animation-delay="0.6s">
+                    <div class="product-img"><img src="img/rasdvisnaya.png" alt="Сетка для раздвижных окон"></div>
                     <div class="product-content">
                         <h3>Сетка для раздвижных окон</h3>
                         <p>Специальная конструкция для раздвижных систем.</p>
-                        <div class="product-price">59 руб / м2</div>
+                        <div class="product-price">от 50 руб</div>
                         <a href="#contact" class="btn btn-secondary">Заказать</a>
                         <div class="product-meta">
                             <span><i class="fas fa-clock"></i> 3-5 дней</span>
@@ -271,69 +256,44 @@
                 <h2>Почему выбирают наши сетки</h2>
                 <p class="section-subtitle">6 причин доверить защиту ваших окон профессионалам</p>
             </div>
-
             <div class="benefits-grid">
-                <!-- Benefit 1 -->
                 <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Гарантия 1-3 года</h3>
                     <p>Мы уверены в качестве наших материалов и даем официальную гарантию на все виды сеток</p>
                     <div class="benefit-number">01</div>
                 </div>
-
-                <!-- Benefit 2 -->
                 <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-ruler-combined"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-ruler-combined"></i></div>
                     <h3>Точные замеры</h3>
                     <p>Бесплатный выезд замерщика с цифровым оборудованием для идеальной подгонки</p>
                     <div class="benefit-number">02</div>
                 </div>
-
-                <!-- Benefit 3 -->
                 <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
                     <h3>Быстрое производство</h3>
                     <p>Изготовление за 1-2 деня благодаря собственному производству в Минске</p>
                     <div class="benefit-number">03</div>
                 </div>
-
-                <!-- Benefit 4 -->
                 <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-cat"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-cat"></i></div>
                     <h3>Защита от животных</h3>
                     <p>Специальные усиленные сетки "Антикошка" выдерживают любые атаки питомцев</p>
                     <div class="benefit-number">04</div>
                 </div>
-
-                <!-- Benefit 5 -->
                 <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-wind"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-wind"></i></div>
                     <h3>Антипыль и антипух</h3>
                     <p>Мелкоячеистые фильтрующие сетки задерживают пыльцу, пух и мелкую пыль</p>
                     <div class="benefit-number">05</div>
                 </div>
-
-                <!-- Benefit 6 -->
                 <div class="benefit-card animate-on-scroll" data-animation="animate__fadeInUp">
-                    <div class="benefit-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-palette"></i></div>
                     <h3>Цвет на выбор</h3>
                     <p>Множество вариантов расцветок рамок под любой дизайн окон и интерьера</p>
                     <div class="benefit-number">06</div>
                 </div>
             </div>
-
             <div class="benefits-cta animate__animated animate__fadeInUp" data-wow-delay="0.7s">
                 <p>Остались вопросы? Наши специалисты помогут подобрать идеальное решение!</p>
                 <a href="#contact" class="btn btn-secondary">Консультация</a>
@@ -347,92 +307,78 @@
             <div class="section-title">
                 <h2>Наши контакты</h2>
             </div>
-
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Свяжитесь с нами</h3>
-
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="contact-text">
                                 <h4>Адрес</h4>
-                                <p>г. Минск, ул. Производственная, 15</p>
+                                <p>г. Минск, улица Чюрлёниса, 12</p>
                             </div>
                         </div>
-
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                             <div class="contact-text">
                                 <h4>Телефон</h4>
-                                <a href="tel:+74951234567">+3 (7529) 123-45-67</a>
+                                <a href="tel:+375291884907">+375 (29) 188-49-07</a>
+                                <div class="messenger-buttons">
+                                    <a href="viber://contact?number=375291884907" class="messenger-btn viber"
+                                        target="_blank">
+                                        <i class="fab fa-viber"></i> Viber
+                                    </a>
+                                    <a href="https://t.me/+375291884907" class="messenger-btn telegram" target="_blank">
+                                        <i class="fab fa-telegram-plane"></i> Telegram
+                                    </a>
+                                    <a href="https://wa.me/375291884907" class="messenger-btn whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> WhatsApp
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                             <div class="contact-text">
                                 <h4>Email</h4>
-                                <a href="mailto:info@moskit-setka.ru">info@moskit-setka.ru</a>
+                                <a href="gardi-minsk@yandex.ru">gardi-minsk@yandex.ru</a>
                             </div>
                         </div>
-
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
                             <div class="contact-text">
                                 <h4>Режим работы</h4>
                                 <p>Пн-Пт: 9:00 - 20:00<br>Сб-Вс: 10:00 - 18:00</p>
                             </div>
                         </div>
                     </div>
-
-                    <h3 style="margin-top: 40px;">Мы в соцсетях</h3>
-                    <div class="contact-social">
-                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                    </div>
                 </div>
-
                 <div class="contact-form">
                     <h3>Оставьте заявку</h3>
                     <form id="orderForm">
                         <div class="form-group">
                             <label for="name">Ваше имя</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
-
                         <div class="form-group">
                             <label for="phone">Телефон</label>
-                            <input type="tel" id="phone" class="form-control" required>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
                         </div>
-
                         <div class="form-group">
                             <label for="product">Тип сетки</label>
-                            <select id="product" class="form-control">
+                            <select id="product" name="product" class="form-control" required>
+                                <option value="" disabled selected>Выберите тип</option>
                                 <option value="standard">Стандартная сетка</option>
                                 <option value="antikoshka">Сетка "Антикошка"</option>
                                 <option value="roll">Рулонная сетка</option>
                                 <option value="door">Дверная сетка</option>
                                 <option value="antipyl">Сетка "Антипыль"</option>
-                                <option value="panorama">Сетка для панорамных окон</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Дополнительная информация</label>
-                            <textarea id="message" class="form-control"></textarea>
+                            <textarea id="message" name="message" class="form-control"></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-primary">Отправить заявку</button>
                     </form>
                 </div>
@@ -446,7 +392,6 @@
             <div class="section-title">
                 <h2>Отзывы наших клиентов</h2>
             </div>
-
             <div class="testimonials-slider">
                 <div class="testimonial-item">
                     <div class="testimonial-avatar">
@@ -460,7 +405,6 @@
                     <div class="testimonial-author">Марина Сапошина</div>
                     <div class="testimonial-position">г. Минск</div>
                 </div>
-
                 <div class="testimonial-item">
                     <div class="testimonial-avatar">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей Петров">
@@ -473,7 +417,6 @@
                     <div class="testimonial-author">Алексей Петров</div>
                     <div class="testimonial-position">г. Фаниполь</div>
                 </div>
-
                 <div class="testimonial-item">
                     <div class="testimonial-avatar">
                         <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Елена Смирнова">
@@ -490,23 +433,21 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
-                <!-- Колонка 1: О компании -->
                 <div class="footer-col">
                     <h3>О компании</h3>
-                    <p>Производство и установка москитных сеток с 2010 года. Качественные материалы, профессиональный
+                    <p>Производство и установка москитных сеток с 2009 года. Качественные материалы, профессиональный
                         монтаж и гарантия до 5 лет.</p>
                     <div class="contact-social" style="margin-top: 15px;">
-                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <i class="fab fa-vk"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-whatsapp"></i>
+                        <i class="fab fa-telegram"></i>
                     </div>
                 </div>
-
-                <!-- Колонка 2: Продукция -->
                 <div class="footer-col">
                     <h3>Продукция</h3>
                     <ul class="footer-links">
@@ -518,8 +459,6 @@
                         <li><a href="#products">Для раздвижных окон</a></li>
                     </ul>
                 </div>
-
-                <!-- Колонка 3: Услуги -->
                 <div class="footer-col">
                     <h3>Услуги</h3>
                     <ul class="footer-links">
@@ -531,19 +470,17 @@
                         <li><a href="#">Выезд по области</a></li>
                     </ul>
                 </div>
-
-                <!-- Колонка 4: Контакты -->
                 <div class="footer-col">
                     <h3>Контакты</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--secondary);"></i> г.
-                            Минск, ул. Производственная, 15</li>
-                        <li><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--secondary);"></i> +3
-                            (7529) 123-45-67</li>
+                            Минск, улица Чюрлёниса, 12</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--secondary);"></i> +375
+                            (29) 188-49-07</li>
                         <li><i class="fas fa-envelope" style="margin-right: 8px; color: var(--secondary);"></i>
-                            info@moskit-setka.ru</li>
+                            gardi-minsk@yandex.ru</li>
                         <li><i class="fas fa-clock" style="margin-right: 8px; color: var(--secondary);"></i> Пн-Пт:
-                            9:00-20:00</li>
+                            9:00-20:00,Сб-Вс: 10:00 - 18:00</li>
                         <li style="margin-top: 15px;">
                             <a href="#contact" class="btn btn-secondary"
                                 style="padding: 8px 15px; font-size: 0.85rem;">Заказать звонок</a>
@@ -551,9 +488,8 @@
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2023 "МоскитСетка" - производство москитных сеток. Все права защищены.</p>
+                <p>&copy; "МоскитСетка" - производство москитных сеток. Все права защищены.</p>
                 <p style="margin-top: 5px; font-size: 0.8rem;">
                     <a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Политика
                         конфиденциальности</a> |
@@ -562,82 +498,12 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const navOverlay = document.getElementById('navOverlay');
 
-            mobileMenuBtn.addEventListener('click', function () {
-                navLinks.classList.toggle('active');
-                navOverlay.classList.toggle('active');
-                mobileMenuBtn.classList.toggle('active');
-
-                // Блокировка прокрутки при открытом меню
-                if (navLinks.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
-            });
-
-            // Закрытие меню при клике на overlay
-            navOverlay.addEventListener('click', function () {
-                navLinks.classList.remove('active');
-                navOverlay.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            // Закрытие меню при клике на ссылку
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    navOverlay.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-        });
-    </script>
-    <script>
-        // Анимации при скролле
-        document.addEventListener('DOMContentLoaded', function () {
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
-
-            // Флаг для отслеживания инициализации
-            let animationInitialized = false;
-
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const handleIntersection = (entries, observer) => {
-                entries.forEach(entry => {
-                    // Проверяем, что элемент пересекается и анимация ещё не применялась
-                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                        const animationClass = entry.target.getAttribute('data-animation');
-                        const delay = entry.target.getAttribute('data-animation-delay') || '0s';
-
-                        entry.target.style.animationDelay = delay;
-                        entry.target.classList.add('animate__animated', animationClass, 'animated');
-
-                        // Прекращаем наблюдение за элементом
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-            // Инициализация только после небольшой задержки
-            setTimeout(() => {
-                animationInitialized = true;
-                animateElements.forEach(element => {
-                    observer.observe(element);
-                });
-            }, 300); // 300ms задержка для инициализации
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/102273072" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
 </body>
+
+</html>
